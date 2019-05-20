@@ -1,0 +1,87 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+		">
+	
+	
+	
+	<!--  This file will allow us to configure spring beans -->
+	
+	<!-- Scanning our application for  beans -->
+<!-- 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+ -->	<context:component-scan base-package="com.michael.app"></context:component-scan>
+ 	
+	<!-- <bean id="fighterOrigin" class="com.michael.app.beans.Origin">
+		<property name="id" value="1"></property>
+		<property name="name" value="Fire Emblem"></property>
+	</bean>
+	<bean id="fighterTier" class="com.michael.app.beans.Tier">
+		<property name="id" value="1"></property>
+		<property name="name" value="High"></property>
+	</bean>
+	
+	<bean id="fighter" class="com.michael.app.beans.Fighter">
+		<property name="id" value="1"></property>
+		<property name="name" value="Lucina"></property>
+		<property name="origin" ref="fighterOrigin"></property>
+		<property name="tier" ref="fighterTier"></property>
+	</bean> -->
+	
+	
+	
+
+	<!-- Tell SpringData where our DAOs are. -->
+<!-- 	<jpa:repositories base-package="com.michael.app.data"></jpa:repositories>
+ -->
+	<!-- Enable Transaction management -->
+<!-- 	<tx:annotation-driven></tx:annotation-driven>
+ -->
+	<!-- Set up Spring Data -->
+	<bean id="ourDB" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@michaelrds.ci6x1ysczv7p.us-east-1.rds.amazonaws.com:1521:ORCL" />
+		<property name="username" value="m13rewer" />
+		<property name="password" value="op27no21980" />
+	</bean>
+ 
+	<!-- Adapter: Spring Data doesn't actually know anything about Hibernate. 
+		But there are adapters to tell Spring Data how to use different ORM frameworks. -->
+	<!-- <bean id="hibernateJpaVendorAdapter"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+	</bean> -->
+
+	<!-- Set up Hibernate -->
+	<!-- <bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="ourDB" />
+		<property name="packagesToScan" value="com.michael.app.beans" />
+		<property name="jpaVendorAdapter"
+			ref="hibernateJpaVendorAdapter" />
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="show_sql">true</prop>
+				<prop key="format_sql">true</prop>
+				<prop key="use_sql_comments">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory"></property>
+	</bean> -->
+	
+	
+</beans>
