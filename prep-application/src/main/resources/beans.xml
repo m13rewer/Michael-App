@@ -16,8 +16,8 @@
 	<!--  This file will allow us to configure spring beans -->
 	
 	<!-- Scanning our application for  beans -->
-<!-- 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
- -->	<context:component-scan base-package="com.michael.app"></context:component-scan>
+ 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<context:component-scan base-package="com.michael.app"></context:component-scan>
  	
 	<!-- <bean id="fighterOrigin" class="com.michael.app.beans.Origin">
 		<property name="id" value="1"></property>

@@ -25,7 +25,6 @@ public class Origin {
 
 	public Origin() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Origin(Integer id, String name) {

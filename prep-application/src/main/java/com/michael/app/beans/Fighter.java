@@ -1,7 +1,5 @@
 package com.michael.app.beans;
 
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,18 +8,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @Entity
 @Table(name="FIGHTERS")
 @Component
 @Scope(scopeName="prototype")
+//@JsonInclude(Include.NON_EMPTY)
 public class Fighter {
 	
 	@Id
@@ -33,12 +35,12 @@ public class Fighter {
 	@Column(name="NAME")
 	private String name;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="origin.id")
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="origin_id", referencedColumnName="ID")
 	private Origin origin;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="tier.id")
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="tiers_id", referencedColumnName="ID")
 	private Tier tier;
 	
 	public Fighter() {
