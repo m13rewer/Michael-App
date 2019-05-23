@@ -28,7 +28,7 @@ import com.michael.app.services.TierService;
 public class MessageController implements ApplicationContextAware{
 	
 	@Autowired
-	public static final ApplicationContext ac;
+	protected static ApplicationContext ac;
 	@Autowired
 	private FighterService fs;
 	@Autowired
