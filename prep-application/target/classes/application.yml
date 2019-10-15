@@ -36,7 +36,8 @@ info:
 eureka:
     client:
         service-url:
-            defaultZone: http://localhost:8761/eureka/
+            defaultZone: http://ec2-3-225-41-251.compute-1.amazonaws.com:8761/eureka
+            #http://ec2-3-225-41-251.compute-1.amazonaws.com:8761/eureka
     instance:
    #  hostName: ${SCREENFORCE_INSTANCE_HOSTNAME:localhost}
    #  statusPageUrl: http://${SCREENFORCE_INSTANCE_HOSTNAME:localhost}:${server.port}/info

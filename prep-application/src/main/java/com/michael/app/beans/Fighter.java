@@ -15,6 +15,7 @@ import javax.persistence.Table;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -23,13 +24,14 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @Table(name="FIGHTERS")
 @Component
 @Scope(scopeName="prototype")
+//@CrossOrigin(origins="http://localhost:4200")
 //@JsonInclude(Include.NON_EMPTY)
 public class Fighter {
 	
 	@Id
+	@GeneratedValue(generator="ID", strategy=GenerationType.SEQUENCE)	
+	@SequenceGenerator(name="ID", sequenceName="SEQ_FIGHTERS", allocationSize=1)
 	@Column(name="ID")
-	@SequenceGenerator(name="SEQ_FIGHTERS", sequenceName="SEQ_FIGHTERS")
-	@GeneratedValue(generator="SEQ_FIGHTERS", strategy=GenerationType.AUTO)	
 	private Integer id;
 	
 	@Column(name="NAME")

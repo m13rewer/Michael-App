@@ -16,9 +16,10 @@ import org.springframework.stereotype.Component;
 public class Tier {
 	
 	@Id
+	@GeneratedValue(generator="ID", strategy=GenerationType.SEQUENCE)	
+	@SequenceGenerator(name="ID", sequenceName="SEQ_TIERS", allocationSize=1)
 	@Column(name="ID")
-	@SequenceGenerator(name="SEQ_TIERS", sequenceName="SEQ_TIERS")
-	@GeneratedValue(generator="SEQ_TIERS", strategy=GenerationType.AUTO)	
+	
 	private Integer id;
 	
 	@Column(name="NAME")

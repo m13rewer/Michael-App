@@ -5,6 +5,7 @@
 	<groupId>com.michael</groupId>
 	<artifactId>prep-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -139,11 +140,13 @@
 		<!-- <dependency> <groupId>com.h2database</groupId> <artifactId>h2</artifactId> 
 			</dependency> -->
 
+	
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc7</artifactId>
 			<version>12.1.0.2</version>
-		</dependency>
+		</dependency> 
+		
 		<!-- Swagger -->
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -157,12 +160,12 @@
 		</dependency>
 
 		<!-- RestAssured Dependencies -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
 			<version>3.1.1</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
@@ -199,11 +202,11 @@
 		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.sonarsource.scanner.maven</groupId>
 			<artifactId>sonar-maven-plugin</artifactId>
 			<version>3.5.0.1254</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
 		<!-- <dependency>

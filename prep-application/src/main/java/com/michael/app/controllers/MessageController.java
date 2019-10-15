@@ -24,7 +24,7 @@ import com.michael.app.services.TierService;
 
 @RestController
 @RequestMapping(value="/message")
-//@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="http://localhost:4200")
 public class MessageController implements ApplicationContextAware{
 	
 	@Autowired
@@ -59,7 +59,7 @@ public class MessageController implements ApplicationContextAware{
 			@RequestParam("origin") Integer originId, @RequestParam("tier") Integer tierId,
 			HttpSession session) {
 		
-		Fighter fighter = new Fighter(1, name, os.getOrigin(originId), ts.getTier(tierId));
+		Fighter fighter = new Fighter(null, name, os.getOrigin(originId), ts.getTier(tierId));
 		fs.saveFighter(fighter);
 	}
 

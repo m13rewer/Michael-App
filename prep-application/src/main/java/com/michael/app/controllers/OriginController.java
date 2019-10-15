@@ -1,6 +1,7 @@
 package com.michael.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +12,7 @@ import com.michael.app.services.OriginService;
 
 @RestController
 @RequestMapping(value="/origin")
+@CrossOrigin(origins="http://localhost:4200")
 public class OriginController {
 	
 	@Autowired
@@ -18,7 +20,7 @@ public class OriginController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public void makeOrigin(@RequestParam("name") String name) {
-		Origin origin = new Origin(1, name);
+		Origin origin = new Origin(null, name);
 		os.saveOrigin(origin);
 	}
 }

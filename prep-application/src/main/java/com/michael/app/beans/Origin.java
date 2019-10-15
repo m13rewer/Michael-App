@@ -15,9 +15,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class Origin {
 	@Id
+	@GeneratedValue(generator="ID", strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(name="ID", sequenceName="SEQ_ORIGIN", allocationSize=1)
 	@Column(name="ID")
-	@SequenceGenerator(name="SEQ_ORIGIN", sequenceName="SEQ_ORIGIN")
-	@GeneratedValue(generator="SEQ_ORIGIN", strategy=GenerationType.AUTO)
+	
 	private Integer id;
 	
 	@Column(name="NAME")
